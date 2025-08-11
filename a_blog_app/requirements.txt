@@ -1,0 +1,12 @@
+asgiref==3.8.1
+certifi==2025.4.26
+Django==5.2.1
+django-taggit==5.0.1
+Markdown==3.6
+pip_system_certs==5.0
+psycopg==3.2.9
+python-decouple==3.8
+sqlparse==0.5.3
+truststore==0.10.1
+typing_extensions==4.14.0
+tzdata==2025.2
