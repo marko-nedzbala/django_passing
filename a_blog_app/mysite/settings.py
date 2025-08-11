@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
 
     # third party
     'taggit',
@@ -81,8 +83,24 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('PORT')
+
+        # 'NAME': 'blog',
+        # 'USER': 'blog',
+        # 'PASSWORD': 'blog',
+        # 'HOST': 'localhost',
+        # 'PORT': 6000,
+
+        # 'NAME': 'blog',
+        # 'USER': 'postgres',
+        # 'PASSWORD': 'marko',
+        # 'HOST': 'localhost',
+        # 'PORT': 5432,
     }
 }
 
@@ -135,3 +153,6 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
+
+SITE_ID = 1
+
